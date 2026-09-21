@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import AuthPanel from "@/components/AuthPanel";
 import DarkHero from "@/components/DarkHero";
 import { site } from "@/lib/site";
 
@@ -16,7 +15,7 @@ export default function SupportPortal() {
           { text: "Customer" },
           { text: "support portal", red: true, indent: "md:pl-[8%]", mark: true },
         ]}
-        intro="Log in to manage your account, raise a support ticket or check your subscription."
+        intro="Everything you need to manage your Plusnet service — in the customer portal or from our support team."
       />
 
       <section className="bg-black pb-16 text-white md:pb-24">
@@ -51,7 +50,25 @@ export default function SupportPortal() {
               Read the FAQ
             </Link>
           </div>
-          <AuthPanel />
+          <div className="flex flex-col rounded-xl bg-brand-dark p-8 md:p-10">
+            <p className="text-xs font-light text-white/70">[Customer portal]</p>
+            <h2 className="mt-4 text-3xl font-extrabold uppercase leading-[1] tracking-tight md:text-4xl">
+              Manage your
+              <br />
+              account online
+            </h2>
+            <p className="mt-5 max-w-md flex-1 text-sm font-light leading-relaxed text-white/85 md:text-base">
+              Log in to the Plusnet customer portal to view your subscription,
+              renew your package, raise a support ticket and update your
+              details.
+            </p>
+            <a
+              href={site.portal}
+              className="mt-8 self-start rounded-md bg-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-black hover:text-white"
+            >
+              Open the portal
+            </a>
+          </div>
         </div>
       </section>
     </>
